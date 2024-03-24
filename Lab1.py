@@ -147,11 +147,11 @@
 # Вывести только те строки, в которых представлены респонденты мужского пола, чья разница в весе неотрицательна, а ИМТ в апреле больше двадцати.
 
 
-import csv
+# import csv
 
-with open('freshman_kgs.csv', 'r', newline='') as file:
-    reader = file.read()
-    # print(data)
+# with open('freshman_kgs.csv', 'r', newline='') as file:
+#     reader = file.read()
+#     # print(data)
 
 
 # 2. Файл homes.csv, где представлена статистика по продаже домов. Столбцы: цена продажи и запрашиваемая цена (в тыс.долларов),
