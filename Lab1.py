@@ -149,13 +149,59 @@
 
 # import csv
 
-# with open('freshman_kgs.csv', 'r', newline='') as file:
-#     reader = file.read()
-#     # print(data)
+# with open("freshman_kgs.csv", mode="r") as file:
+#     csv_reader = csv.reader(file)
+#     header = next(csv_reader)
 
+#     with open("result_kgs.csv", mode="w", newline="") as result_file:
+#         csv_writer = csv.writer(result_file)
+#         csv_writer.writerow(header + ["Weight diff"])
+
+#         for row in csv_reader:
+#             sex = row[0]
+#             weight_diff = int(row[1]) - int(row[2])
+#             bmi = float(row[4])
+
+#             if sex == "M" and weight_diff >= 0 and bmi > 20.0:
+#                 weight_diff = str(weight_diff)
+#                 csv_writer.writerow(row + [weight_diff])
+
+# print("Результаты сохранены в файле result_kgs.csv")
 
 # 2. Файл homes.csv, где представлена статистика по продаже домов. Столбцы: цена продажи и запрашиваемая цена (в тыс.долларов),
 # жилая площадь, количество комнат, ванных комнат, возраст дома, количество акров на участке, налог (в долларах).
 # Нужно рассчитать среднюю итоговую стоимость дома с восемью комнатами, а также создать новый столбец,
 # в котором были бы только дома со стоимостью более 180 и налогом менее 3500.
+
+# import csv
+# rows = []
+# with open("homes.csv", mode="r", newline="") as file:
+#     csv_reader = csv.reader(file)
+#     for row in csv_reader:
+#         rows.append(row)
+
+
+# total_cost = 0
+# count = 0
+# for row in rows[1:]:
+#     if len(row) > 3 and int(row[3]) == 8:
+#         total_cost += (int(row[0])*1000 + int(row[8]))  # Необходимо перевести тысячи долларов в доллары
+#         count += 1
+
+# avg_cost = total_cost / count
+
+
+# filtered_rows = [rows[0]]
+# for row in rows[1:]:
+#     if len(row) > 8 and int(row[0]) > 180 and int(row[8]) < 3500:
+#         filtered_rows.append(row)
+
+
+# with open("result_homes.csv", mode="w", newline="") as new_file:
+#     writer = csv.writer(new_file)
+#     for row in filtered_rows:
+#         writer.writerow(row)
+
+# print(f"Средняя итоговая стоимость дома с восемью комнатами: {avg_cost} долларов")
+# print("Результаты сохранены в файле result_homes.csv")
 
